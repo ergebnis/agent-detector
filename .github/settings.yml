@@ -1,0 +1,106 @@
+# https://github.com/repository-settings/app
+
+branches:
+  - name: "main"
+
+    # https://docs.github.com/en/rest/reference/repos#delete-branch-protection
+    # https://docs.github.com/en/rest/reference/repos#update-branch-protection
+
+    protection:
+      enforce_admins: false
+      required_pull_request_reviews:
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        required_approving_review_count: 1
+      required_status_checks:
+        checks:
+          - context: "Code Coverage (7.4, locked)"
+          - context: "Coding Standards (7.4, locked)"
+          - context: "Dependency Analysis (7.4, locked)"
+          - context: "Mutation Tests (7.4, locked)"
+          - context: "Refactoring (7.4, locked)"
+          - context: "Security Analysis (7.4, locked)"
+          - context: "Static Code Analysis (7.4, locked)"
+          - context: "Tests (7.4, highest)"
+          - context: "Tests (7.4, locked)"
+          - context: "Tests (7.4, lowest)"
+          - context: "Tests (8.0, highest)"
+          - context: "Tests (8.0, locked)"
+          - context: "Tests (8.0, lowest)"
+          - context: "Tests (8.1, highest)"
+          - context: "Tests (8.1, locked)"
+          - context: "Tests (8.1, lowest)"
+          - context: "Tests (8.2, highest)"
+          - context: "Tests (8.2, locked)"
+          - context: "Tests (8.2, lowest)"
+          - context: "Tests (8.3, highest)"
+          - context: "Tests (8.3, locked)"
+          - context: "Tests (8.3, lowest)"
+          - context: "Tests (8.4, highest)"
+          - context: "Tests (8.4, locked)"
+          - context: "Tests (8.4, lowest)"
+          - context: "Tests (8.5, highest)"
+          - context: "Tests (8.5, locked)"
+          - context: "Tests (8.5, lowest)"
+        strict: false
+      restrictions:
+
+        # https://docs.github.com/en/rest/reference/repos#list-branches--parameters
+
+        # Note: User, app, and team restrictions are only available for organization-owned repositories.
+        # Set to null to disable when using this configuration for a repository on a personal account.
+
+        apps: []
+        teams: []
+        users:
+          - "ergebnis-bot"
+
+# https://docs.github.com/en/rest/reference/issues#create-a-label
+# https://docs.github.com/en/rest/reference/issues#update-a-label
+
+labels:
+  - name: "bug"
+    color: "ee0701"
+    description: ""
+
+  - name: "dependency"
+    color: "0366d6"
+    description: ""
+
+  - name: "enhancement"
+    color: "0e8a16"
+    description: ""
+
+  - name: "question"
+    color: "cc317c"
+    description: ""
+
+  - name: "security"
+    color: "ee0701"
+    description: ""
+
+# https://docs.github.com/en/rest/reference/repos#update-a-repository
+
+repository:
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_squash_merge: false
+  archived: false
+  default_branch: "main"
+  delete_branch_on_merge: true
+  description: "🤖 Provides a composer package with a detector for detecting the presence of an agent."
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
+  has_discussions: false
+  has_downloads: true
+  has_issues: true
+  has_pages: false
+  has_projects: false
+  has_wiki: false
+  is_template: false
+  name: "agent-detector"
+  private: true
+
+  # https://docs.github.com/en/rest/reference/repos#replace-all-repository-topics
+
+  topics: "php, agent, detector"

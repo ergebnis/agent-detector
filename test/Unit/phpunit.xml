@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../vendor/phpunit/phpunit/phpunit.xsd"
+    beStrictAboutChangesToGlobalState="true"
+    beStrictAboutOutputDuringTests="true"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    bootstrap="../../vendor/autoload.php"
+    cacheResultFile="../../.build/phpunit/unit/result.cache"
+    colors="true"
+    columns="max"
+    executionOrder="random"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    verbose="true"
+>
+    <coverage>
+        <include>
+            <directory suffix=".php">../../src/</directory>
+        </include>
+    </coverage>
+    <extensions>
+        <extension class="Ergebnis\PHPUnit\SlowTestDetector\Extension"/>
+    </extensions>
+    <testsuites>
+        <testsuite name="Unit Tests">
+            <directory>.</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
