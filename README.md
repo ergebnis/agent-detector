@@ -23,7 +23,40 @@ composer require ergebnis/agent-detector
 
 ## Usage
 
-💡 This is a great place for showing a few usage examples!
+### Detecting the presence of an agent
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Ergebnis\AgentDetector;
+
+$detector = new AgentDetector\Detector();
+
+$isAgentPresent = $detector->isAgentPresent(\getenv());
+```
+
+### Supported agents
+
+This package detects the presence of the following agents via environment variables:
+
+| Agent | Environment Variable |
+|---|---|
+| [Amp](https://amp.dev) | `AMP_CURRENT_THREAD_ID` |
+| [Antigravity](https://antigravity.dev) | `ANTIGRAVITY_AGENT` |
+| [Augment](https://augmentcode.com) | `AUGMENT_AGENT` |
+| [Claude Code](https://github.com/anthropics/claude-code) | `CLAUDECODE`, `CLAUDE_CODE`, `CLAUDE_CODE_IS_COWORK` |
+| [Codex](https://github.com/openai/codex) | `CODEX_CI`, `CODEX_SANDBOX`, `CODEX_THREAD_ID` |
+| [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_TRACE_ID` |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI_CLI` |
+| [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_GITHUB_TOKEN`, `COPILOT_MODEL` |
+| [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
+| [Replit](https://replit.com) | `REPL_ID` |
+
+### Indicating the presence of an agent
+
+In addition, the generic `AI_AGENT` environment variable can be set to indicate the presence of an agent.
 
 ## Changelog
 
@@ -54,6 +87,11 @@ This project has a [security policy](.github/SECURITY.md).
 ## License
 
 This project uses the [MIT license](LICENSE.md).
+
+
+## Credits
+
+The agent detector is inspired by [`shipfastlabs/agent-detector`](https://github.com/shipfastlabs/agent-detector), originally licensed under MIT by [Pushpak Chhajed](https://github.com/pushpak1300).
 
 ## Social
 
