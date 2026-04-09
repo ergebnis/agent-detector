@@ -6,6 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`1902cc2...main`][1902cc2...main].
+For a full diff see [`2655ea1...main`][2655ea1...main].
 
-[1902cc2...main]: https://github.com/ergebnis/agent-detector/compare/1902cc2...main
+[2655ea1...main]: https://github.com/ergebnis/agent-detector/compare/2655ea1...main
