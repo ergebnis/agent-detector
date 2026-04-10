@@ -80,6 +80,7 @@ final class DetectorTest extends Framework\TestCase
             'COPILOT_GITHUB_TOKEN',
             'COPILOT_MODEL',
             'CURSOR_AGENT',
+            'CURSOR_EXTENSION_HOST_ROLE',
             'CURSOR_TRACE_ID',
             'GEMINI_CLI',
             'OPENCODE',
