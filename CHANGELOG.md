@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.0.1...main`][1.0.1...main].
 
+### Added
+
+- Added support for detecting the presence of an agent when the `CURSOR_EXTENSION_HOST_ROLE` environment variable is set ([#2]), by [@localheinz]
+
 ## [`1.0.1`][1.0.1]
 
 For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
@@ -22,5 +26,6 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [2655ea1...1.0.1]: https://github.com/ergebnis/agent-detector/compare/2655ea1...1.0.1
 
 [#1]: https://github.com/ergebnis/agent-detector/pull/1
+[#2]: https://github.com/ergebnis/agent-detector/pull/2
 
 [@localheinz]: https://github.com/localheinz

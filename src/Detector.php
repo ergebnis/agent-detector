@@ -42,6 +42,7 @@ final class Detector
         'COPILOT_GITHUB_TOKEN' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+        'CURSOR_EXTENSION_HOST_ROLE' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_TRACE_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
         'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
