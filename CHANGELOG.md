@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.1.0...main`][1.1.0...main].
 
+### Fixed
+
+- Allowed installation on PHP 8.6 ([#4]), by [@localheinz]
+
 ## [`1.1.0`][1.1.0]
 
 For a full diff see [`1.0.1...1.1.0`][1.0.1...1.1.0].
@@ -33,5 +37,6 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 
 [#1]: https://github.com/ergebnis/agent-detector/pull/1
 [#2]: https://github.com/ergebnis/agent-detector/pull/2
+[#4]: https://github.com/ergebnis/agent-detector/pull/4
 
 [@localheinz]: https://github.com/localheinz
