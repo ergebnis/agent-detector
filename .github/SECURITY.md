@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/agent-detector` have active support:
 
-- `1.1.0`
+- `1.1.1`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/agent-detector` have reached their end of life:
 
-- `<1.1.0`
+- `<1.1.1`
 
 ## Reporting a Vulnerability
 
