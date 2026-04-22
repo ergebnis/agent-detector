@@ -79,6 +79,7 @@ final class DetectorTest extends Framework\TestCase
             'COPILOT_ALLOW_ALL',
             'COPILOT_GITHUB_TOKEN',
             'COPILOT_MODEL',
+            'COPILOT_CLI',
             'CURSOR_AGENT',
             'CURSOR_EXTENSION_HOST_ROLE',
             'CURSOR_TRACE_ID',
@@ -86,6 +87,7 @@ final class DetectorTest extends Framework\TestCase
             'OPENCODE',
             'OPENCODE_CLIENT',
             'REPL_ID',
+            'PI_CODING_AGENT',
         ];
 
         foreach ($variables as $variable) {
