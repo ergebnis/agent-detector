@@ -41,6 +41,7 @@ final class Detector
         'COPILOT_ALLOW_ALL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_GITHUB_TOKEN' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+        'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_EXTENSION_HOST_ROLE' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_TRACE_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
@@ -48,6 +49,7 @@ final class Detector
         'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
         'OPENCODE_CLIENT' => 'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
         'REPL_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+        'PI_CODING_AGENT' => 'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',
     ];
 
     /**
