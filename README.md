@@ -9,7 +9,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ergebnis/agent-detector/v/stable)](https://packagist.org/packages/ergebnis/agent-detector)
 [![Total Downloads](https://poser.pugx.org/ergebnis/agent-detector/downloads)](https://packagist.org/packages/ergebnis/agent-detector)
-[![Monthly Downloads](http://poser.pugx.org/ergebnis/agent-detector/d/monthly)](https://packagist.org/packages/ergebnis/agent-detector)
+[![Monthly Downloads](https://poser.pugx.org/ergebnis/agent-detector/d/monthly)](https://packagist.org/packages/ergebnis/agent-detector)
 
 This project provides a [`composer`](https://getcomposer.org) package with a detector for detecting the presence of an agent.
 
