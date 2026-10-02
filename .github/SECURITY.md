@@ -4,7 +4,7 @@
 
 The following versions of `ergebnis/agent-detector` have active support:
 
-- `1.2.0`
+- `^1.2.0`
 
 ## Unsupported Versions
 
