@@ -18,6 +18,7 @@ For a full diff see [`1.2.0...1.3.0`][1.2.0...1.3.0].
 - Added support for detecting the presence of an agent when the `GOOSE_TERMINAL` environment variable is set ([#119]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `GROK_AGENT` environment variable is set ([#120]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `JUNIE_DATA` or `JUNIE_SHIM_PATH` environment variables are set ([#121]), by [@localheinz]
+- Added support for detecting the presence of an agent when the `KIMI_PLUGIN_ROOT` environment variable is set ([#122]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `AGENT_CONTEXT_OUT` or `AGENT_DISPLAY_OUT` environment variables are set ([#123]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `OPENCLAW_SHELL` environment variable is set ([#124]), by [@localheinz]
 
@@ -74,6 +75,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#119]: https://github.com/ergebnis/agent-detector/pull/119
 [#120]: https://github.com/ergebnis/agent-detector/pull/120
 [#121]: https://github.com/ergebnis/agent-detector/pull/121
+[#122]: https://github.com/ergebnis/agent-detector/pull/122
 [#123]: https://github.com/ergebnis/agent-detector/pull/123
 [#124]: https://github.com/ergebnis/agent-detector/pull/124
 
