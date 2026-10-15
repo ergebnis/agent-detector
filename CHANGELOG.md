@@ -15,6 +15,7 @@ For a full diff see [`1.2.0...main`][1.2.0...main].
 - Added support for detecting the presence of an agent when the `GROK_AGENT` environment variable is set ([#120]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `JUNIE_DATA` or `JUNIE_SHIM_PATH` environment variables are set ([#121]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `AGENT_CONTEXT_OUT` or `AGENT_DISPLAY_OUT` environment variables are set ([#123]), by [@localheinz]
+- Added support for detecting the presence of an agent when the `OPENCLAW_SHELL` environment variable is set ([#124]), by [@localheinz]
 
 ## [`1.2.0`][1.2.0]
 
@@ -68,6 +69,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#120]: https://github.com/ergebnis/agent-detector/pull/120
 [#121]: https://github.com/ergebnis/agent-detector/pull/121
 [#123]: https://github.com/ergebnis/agent-detector/pull/123
+[#124]: https://github.com/ergebnis/agent-detector/pull/124
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

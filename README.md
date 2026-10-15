@@ -56,6 +56,7 @@ This package detects the presence of the following agents via environment variab
 | [Grok](https://x.ai/grok) | `GROK_AGENT` |
 | [Junie](https://www.jetbrains.com/junie) | `JUNIE_DATA`, `JUNIE_SHIM_PATH` |
 | [Kiro CLI](https://kiro.dev) | `AGENT_CONTEXT_OUT`, `AGENT_DISPLAY_OUT` |
+| [OpenClaw](https://openclaw.ai) | `OPENCLAW_SHELL` |
 | [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
 | [Pi](https://pi.dev) | `PI_CODING_AGENT` |
 | [Replit](https://replit.com) | `REPL_ID` |

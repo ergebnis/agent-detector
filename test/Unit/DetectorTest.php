@@ -91,6 +91,7 @@ final class DetectorTest extends Framework\TestCase
             'GROK_AGENT',
             'JUNIE_DATA',
             'JUNIE_SHIM_PATH',
+            'OPENCLAW_SHELL',
             'OPENCODE',
             'OPENCODE_CLIENT',
             'REPL_ID',

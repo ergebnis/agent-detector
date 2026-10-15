@@ -53,6 +53,7 @@ final class Detector
         'GROK_AGENT' => 'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',
         'JUNIE_DATA' => 'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
         'JUNIE_SHIM_PATH' => 'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
+        'OPENCLAW_SHELL' => 'https://github.com/openclaw/openclaw/blob/main/src/agents/bash-tools.exec-runtime.ts',
         'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
         'OPENCODE_CLIENT' => 'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
         'PI_CODING_AGENT' => 'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',
