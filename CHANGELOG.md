@@ -13,6 +13,7 @@ For a full diff see [`1.2.0...main`][1.2.0...main].
 - Added support for detecting the presence of an agent when the `CLINE_ACTIVE` environment variable is set ([#118]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `GOOSE_TERMINAL` environment variable is set ([#119]), by [@localheinz]
 - Added support for detecting the presence of an agent when the `GROK_AGENT` environment variable is set ([#120]), by [@localheinz]
+- Added support for detecting the presence of an agent when the `JUNIE_DATA` or `JUNIE_SHIM_PATH` environment variables are set ([#121]), by [@localheinz]
 
 ## [`1.2.0`][1.2.0]
 
@@ -64,6 +65,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#118]: https://github.com/ergebnis/agent-detector/pull/118
 [#119]: https://github.com/ergebnis/agent-detector/pull/119
 [#120]: https://github.com/ergebnis/agent-detector/pull/120
+[#121]: https://github.com/ergebnis/agent-detector/pull/121
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

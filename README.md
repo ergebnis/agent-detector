@@ -54,6 +54,7 @@ This package detects the presence of the following agents via environment variab
 | [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_GITHUB_TOKEN`, `COPILOT_MODEL |
 | [Goose](https://github.com/block/goose) | `GOOSE_TERMINAL` |
 | [Grok](https://x.ai/grok) | `GROK_AGENT` |
+| [Junie](https://www.jetbrains.com/junie) | `JUNIE_DATA`, `JUNIE_SHIM_PATH` |
 | [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
 | [Pi](https://pi.dev) | `PI_CODING_AGENT` |
 | [Replit](https://replit.com) | `REPL_ID` |

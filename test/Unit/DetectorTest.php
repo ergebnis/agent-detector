@@ -87,6 +87,8 @@ final class DetectorTest extends Framework\TestCase
             'GEMINI_CLI',
             'GOOSE_TERMINAL',
             'GROK_AGENT',
+            'JUNIE_DATA',
+            'JUNIE_SHIM_PATH',
             'OPENCODE',
             'OPENCODE_CLIENT',
             'REPL_ID',
