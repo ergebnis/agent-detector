@@ -73,6 +73,7 @@ final class DetectorTest extends Framework\TestCase
             'CLAUDECODE',
             'CLAUDE_CODE',
             'CLAUDE_CODE_IS_COWORK',
+            'CLINE_ACTIVE',
             'CODEX_CI',
             'CODEX_SANDBOX',
             'CODEX_THREAD_ID',

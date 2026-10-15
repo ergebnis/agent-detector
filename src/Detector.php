@@ -35,6 +35,7 @@ final class Detector
         'CLAUDECODE' => 'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
         'CLAUDE_CODE' => 'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
         'CLAUDE_CODE_IS_COWORK' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+        'CLINE_ACTIVE' => 'https://github.com/cline/cline/blob/main/apps/vscode/src/hosts/vscode/terminal/VscodeTerminalRegistry.ts',
         'CODEX_CI' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CODEX_SANDBOX' => 'https://github.com/openai/codex/blob/main/codex-rs/core/src/seatbelt.rs',
         'CODEX_THREAD_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
