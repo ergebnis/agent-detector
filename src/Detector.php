@@ -48,6 +48,7 @@ final class Detector
         'CURSOR_TRACE_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
         'GOOSE_TERMINAL' => 'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',
+        'GROK_AGENT' => 'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',
         'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
         'OPENCODE_CLIENT' => 'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
         'PI_CODING_AGENT' => 'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',

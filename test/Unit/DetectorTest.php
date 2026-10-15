@@ -86,6 +86,7 @@ final class DetectorTest extends Framework\TestCase
             'CURSOR_TRACE_ID',
             'GEMINI_CLI',
             'GOOSE_TERMINAL',
+            'GROK_AGENT',
             'OPENCODE',
             'OPENCODE_CLIENT',
             'REPL_ID',
