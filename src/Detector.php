@@ -28,6 +28,8 @@ final class Detector
      * @var array<string, string>
      */
     private const AGENT_ENVIRONMENT_VARIABLES = [
+        'AGENT_CONTEXT_OUT' => 'https://kiro.dev/docs/reference/built-in-tools/',
+        'AGENT_DISPLAY_OUT' => 'https://kiro.dev/docs/reference/built-in-tools/',
         'AI_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'AMP_CURRENT_THREAD_ID' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
         'ANTIGRAVITY_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',

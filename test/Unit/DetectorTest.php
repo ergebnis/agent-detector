@@ -66,6 +66,8 @@ final class DetectorTest extends Framework\TestCase
     public static function provideAgentEnvironmentVariable(): iterable
     {
         $variables = [
+            'AGENT_CONTEXT_OUT',
+            'AGENT_DISPLAY_OUT',
             'AI_AGENT',
             'AMP_CURRENT_THREAD_ID',
             'ANTIGRAVITY_AGENT',
