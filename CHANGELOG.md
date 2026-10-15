@@ -11,6 +11,7 @@ For a full diff see [`1.2.0...main`][1.2.0...main].
 ### Added
 
 - Added support for detecting the presence of an agent when the `CLINE_ACTIVE` environment variable is set ([#118]), by [@localheinz]
+- Added support for detecting the presence of an agent when the `GOOSE_TERMINAL` environment variable is set ([#119]), by [@localheinz]
 
 ## [`1.2.0`][1.2.0]
 
@@ -60,6 +61,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#4]: https://github.com/ergebnis/agent-detector/pull/4
 [#10]: https://github.com/ergebnis/agent-detector/pull/10
 [#118]: https://github.com/ergebnis/agent-detector/pull/118
+[#119]: https://github.com/ergebnis/agent-detector/pull/119
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

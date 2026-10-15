@@ -52,6 +52,7 @@ This package detects the presence of the following agents via environment variab
 | [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_EXTENSION_HOST_ROLE`, `CURSOR_TRACE_ID` |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI_CLI` |
 | [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_GITHUB_TOKEN`, `COPILOT_MODEL |
+| [Goose](https://github.com/block/goose) | `GOOSE_TERMINAL` |
 | [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
 | [Pi](https://pi.dev) | `PI_CODING_AGENT` |
 | [Replit](https://replit.com) | `REPL_ID` |
