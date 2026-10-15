@@ -66,6 +66,8 @@ final class DetectorTest extends Framework\TestCase
     public static function provideAgentEnvironmentVariable(): iterable
     {
         $variables = [
+            'AGENT_CONTEXT_OUT',
+            'AGENT_DISPLAY_OUT',
             'AI_AGENT',
             'AMP_CURRENT_THREAD_ID',
             'ANTIGRAVITY_AGENT',
@@ -73,6 +75,7 @@ final class DetectorTest extends Framework\TestCase
             'CLAUDECODE',
             'CLAUDE_CODE',
             'CLAUDE_CODE_IS_COWORK',
+            'CLINE_ACTIVE',
             'CODEX_CI',
             'CODEX_SANDBOX',
             'CODEX_THREAD_ID',
@@ -84,6 +87,11 @@ final class DetectorTest extends Framework\TestCase
             'CURSOR_EXTENSION_HOST_ROLE',
             'CURSOR_TRACE_ID',
             'GEMINI_CLI',
+            'GOOSE_TERMINAL',
+            'GROK_AGENT',
+            'JUNIE_DATA',
+            'JUNIE_SHIM_PATH',
+            'OPENCLAW_SHELL',
             'OPENCODE',
             'OPENCODE_CLIENT',
             'REPL_ID',
