@@ -10,6 +10,8 @@
     colors="true"
     columns="max"
     executionOrder="random"
+    failOnRisky="true"
+    failOnWarning="true"
     stopOnError="false"
     stopOnFailure="false"
     stopOnIncomplete="false"
