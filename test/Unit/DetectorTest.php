@@ -94,7 +94,7 @@ final class DetectorTest extends Framework\TestCase
         $this->environmentVariables = [];
     }
 
-    public function testIsAgentPresentReturnsFalseWhenNoAgentEnvironmentVariableIsSet(): void
+    public function testIsAgentPresentReturnsFalseWhenNoAgentEnvironmentVariableIsSetToNonEmptyString(): void
     {
         $detector = new Detector();
 
@@ -103,7 +103,7 @@ final class DetectorTest extends Framework\TestCase
         self::assertFalse($result);
     }
 
-    public function testIsAgentPresentReturnsFalseWhenUnknownEnvironmentVariableIsSet(): void
+    public function testIsAgentPresentReturnsFalseWhenUnknownEnvironmentVariableIsSetToNonEmptyString(): void
     {
         $variable = \mb_strtoupper(\str_replace(
             '-',
@@ -142,7 +142,7 @@ final class DetectorTest extends Framework\TestCase
         self::assertFalse($result);
     }
 
-    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetToEmptyValueAndAnotherAgentEnvironmentVariableIsSet(): void
+    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetToEmptyValueAndAnotherAgentEnvironmentVariableIsSetToNonEmptyString(): void
     {
         \putenv('AGENT_CONTEXT_OUT=');
         \putenv('PI_CODING_AGENT=1');
@@ -157,7 +157,7 @@ final class DetectorTest extends Framework\TestCase
     /**
      * @dataProvider provideAgentEnvironmentVariable
      */
-    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSet(string $variable): void
+    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetToNonEmptyString(string $variable): void
     {
         \putenv(\sprintf(
             '%s=1',
@@ -174,7 +174,7 @@ final class DetectorTest extends Framework\TestCase
     /**
      * @dataProvider provideAgentEnvironmentVariable
      */
-    public function testIsAgentPresentReturnsFalseWhenAgentEnvironmentVariableIsSetAndDisableEnvironmentVariableIsSet(string $variable): void
+    public function testIsAgentPresentReturnsFalseWhenAgentEnvironmentVariableIsSetAndDisableEnvironmentVariableIsSetToNonEmptyString(string $variable): void
     {
         \putenv(\sprintf(
             '%s=1',
