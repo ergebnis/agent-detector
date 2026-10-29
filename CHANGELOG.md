@@ -15,6 +15,7 @@ For a full diff see [`1.3.0...main`][1.3.0...main].
 ### Fixed
 
 - Adjusted `Detector::isAgentPresent()` to treat environment variables with empty values as not set ([#134]), by [@localheinz]
+- Adjusted `Detector::isAgentPresent()` to detect the presence of an agent via the `CURSOR_EXTENSION_HOST_ROLE` environment variable only when it is set to `agent-exec` ([#137]), by [@localheinz]
 
 ### Removed
 
@@ -95,6 +96,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#134]: https://github.com/ergebnis/agent-detector/pull/134
 [#135]: https://github.com/ergebnis/agent-detector/pull/135
 [#136]: https://github.com/ergebnis/agent-detector/pull/136
+[#137]: https://github.com/ergebnis/agent-detector/pull/137
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

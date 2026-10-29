@@ -41,7 +41,6 @@ final class DetectorTest extends Framework\TestCase
         'COPILOT_MODEL',
         'COPILOT_CLI',
         'CURSOR_AGENT',
-        'CURSOR_EXTENSION_HOST_ROLE',
         'GEMINI_CLI',
         'GOOSE_TERMINAL',
         'GROK_AGENT',
@@ -52,6 +51,9 @@ final class DetectorTest extends Framework\TestCase
         'OPENCODE_CLIENT',
         'PI_CODING_AGENT',
     ];
+    private const AGENT_ENVIRONMENT_VARIABLE_VALUES = [
+        'CURSOR_EXTENSION_HOST_ROLE' => 'agent-exec',
+    ];
 
     /**
      * @var array<string, false|string>
@@ -60,7 +62,12 @@ final class DetectorTest extends Framework\TestCase
 
     protected function setUp(): void
     {
-        foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable) {
+        $variables = \array_merge(
+            self::AGENT_ENVIRONMENT_VARIABLES,
+            \array_keys(self::AGENT_ENVIRONMENT_VARIABLE_VALUES),
+        );
+
+        foreach ($variables as $variable) {
             $this->environmentVariables[$variable] = \getenv($variable);
 
             \putenv($variable);
@@ -171,6 +178,59 @@ final class DetectorTest extends Framework\TestCase
         foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable) {
             yield $variable => [
                 $variable,
+            ];
+        }
+    }
+
+    /**
+     * @dataProvider provideAgentEnvironmentVariableAndValue
+     */
+    public function testIsAgentPresentReturnsFalseWhenAgentEnvironmentVariableIsSetToUnexpectedValue(
+        string $variable,
+        string $value
+    ): void {
+        \putenv(\sprintf(
+            '%s=%s',
+            $variable,
+            self::faker()->word(),
+        ));
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertFalse($result);
+    }
+
+    /**
+     * @dataProvider provideAgentEnvironmentVariableAndValue
+     */
+    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetToExpectedValue(
+        string $variable,
+        string $value
+    ): void {
+        \putenv(\sprintf(
+            '%s=%s',
+            $variable,
+            $value,
+        ));
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertTrue($result);
+    }
+
+    /**
+     * @return \Generator<string, array{0: string, 1: string}>
+     */
+    public static function provideAgentEnvironmentVariableAndValue(): iterable
+    {
+        foreach (self::AGENT_ENVIRONMENT_VARIABLE_VALUES as $variable => $value) {
+            yield $variable => [
+                $variable,
+                $value,
             ];
         }
     }

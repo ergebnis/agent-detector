@@ -45,7 +45,6 @@ final class Detector
         'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'CURSOR_EXTENSION_HOST_ROLE' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
         'GOOSE_TERMINAL' => 'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',
         'GROK_AGENT' => 'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',
@@ -55,6 +54,15 @@ final class Detector
         'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
         'OPENCODE_CLIENT' => 'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
         'PI_CODING_AGENT' => 'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',
+    ];
+
+    /**
+     * @see https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts
+     *
+     * @var array<string, string>
+     */
+    private const AGENT_ENVIRONMENT_VARIABLE_VALUES = [
+        'CURSOR_EXTENSION_HOST_ROLE' => 'agent-exec',
     ];
 
     public function isAgentPresent(): bool
@@ -71,6 +79,12 @@ final class Detector
             }
 
             return true;
+        }
+
+        foreach (self::AGENT_ENVIRONMENT_VARIABLE_VALUES as $variable => $value) {
+            if (\getenv($variable) === $value) {
+                return true;
+            }
         }
 
         return false;
