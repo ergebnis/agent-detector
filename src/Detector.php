@@ -22,51 +22,121 @@ namespace Ergebnis\AgentDetector;
 final class Detector
 {
     /**
-     * @see https://github.com/shipfastlabs/agent-detector
-     * @see https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts
-     *
-     * @var array<string, string>
-     */
-    private const AGENT_ENVIRONMENT_VARIABLES = [
-        'AGENT_CONTEXT_OUT' => 'https://kiro.dev/docs/reference/built-in-tools/',
-        'AGENT_DISPLAY_OUT' => 'https://kiro.dev/docs/reference/built-in-tools/',
-        'AI_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'AMP_CURRENT_THREAD_ID' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
-        'ANTIGRAVITY_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'AUGMENT_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'CLAUDECODE' => 'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
-        'CLAUDE_CODE' => 'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
-        'CLAUDE_CODE_IS_COWORK' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'CLINE_ACTIVE' => 'https://github.com/cline/cline/blob/main/apps/vscode/src/hosts/vscode/terminal/VscodeTerminalRegistry.ts',
-        'CODEX_CI' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'CODEX_SANDBOX' => 'https://github.com/openai/codex/blob/main/codex-rs/core/src/seatbelt.rs',
-        'CODEX_THREAD_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
-        'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
-        'GOOSE_TERMINAL' => 'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',
-        'GROK_AGENT' => 'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',
-        'JUNIE_DATA' => 'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
-        'JUNIE_SHIM_PATH' => 'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
-        'OPENCLAW_SHELL' => 'https://github.com/openclaw/openclaw/blob/main/src/agents/bash-tools.exec-runtime.ts',
-        'OPENCODE' => 'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
-        'OPENCODE_CLIENT' => 'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
-        'PI_CODING_AGENT' => 'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',
-    ];
-
-    /**
-     * @see https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts
-     *
-     * @var array<string, string>
-     */
-    private const AGENT_ENVIRONMENT_VARIABLE_VALUES = [
-        'CURSOR_EXTENSION_HOST_ROLE' => 'agent-exec',
-    ];
-
-    /**
      * @see https://no-color.org
      */
     private const DISABLE_ENVIRONMENT_VARIABLE = 'AGENT_DETECTOR_DISABLE';
+
+    /**
+     * @var list<Condition\Condition>
+     */
+    private array $conditions;
+
+    public function __construct()
+    {
+        $this->conditions = [
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'AGENT_CONTEXT_OUT',
+                'https://kiro.dev/docs/reference/built-in-tools/',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'AGENT_DISPLAY_OUT',
+                'https://kiro.dev/docs/reference/built-in-tools/',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'AI_AGENT',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'AMP_CURRENT_THREAD_ID',
+                'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'ANTIGRAVITY_AGENT',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'AUGMENT_AGENT',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CLAUDECODE',
+                'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CLAUDE_CODE',
+                'https://github.com/anthropics/claude-code/blob/main/src/utils/env.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CLAUDE_CODE_IS_COWORK',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CLINE_ACTIVE',
+                'https://github.com/cline/cline/blob/main/apps/vscode/src/hosts/vscode/terminal/VscodeTerminalRegistry.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CODEX_CI',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CODEX_SANDBOX',
+                'https://github.com/openai/codex/blob/main/codex-rs/core/src/seatbelt.rs',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CODEX_THREAD_ID',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'COPILOT_CLI',
+                'https://github.com/github/copilot-cli',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'CURSOR_AGENT',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetTo::create(
+                'CURSOR_EXTENSION_HOST_ROLE',
+                'agent-exec',
+                'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'GEMINI_CLI',
+                'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'GOOSE_TERMINAL',
+                'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'GROK_AGENT',
+                'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'JUNIE_DATA',
+                'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'JUNIE_SHIM_PATH',
+                'https://github.com/JetBrains/junie/blob/main/templates/junie.shim.sh',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'OPENCLAW_SHELL',
+                'https://github.com/openclaw/openclaw/blob/main/src/agents/bash-tools.exec-runtime.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'OPENCODE',
+                'https://github.com/shipfastlabs/agent-detector/blob/main/src/AgentDetector.php',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'OPENCODE_CLIENT',
+                'https://github.com/sst/opencode/blob/dev/packages/opencode/src/flag/flag.ts',
+            ),
+            Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+                'PI_CODING_AGENT',
+                'https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/src/index.ts',
+            ),
+        ];
+    }
 
     public function isAgentPresent(): bool
     {
@@ -79,22 +149,8 @@ final class Detector
             return false;
         }
 
-        foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable => $url) {
-            $value = \getenv($variable);
-
-            if (!\is_string($value)) {
-                continue;
-            }
-
-            if ('' === $value) {
-                continue;
-            }
-
-            return true;
-        }
-
-        foreach (self::AGENT_ENVIRONMENT_VARIABLE_VALUES as $variable => $value) {
-            if (\getenv($variable) === $value) {
+        foreach ($this->conditions as $condition) {
+            if ($condition->isMet()) {
                 return true;
             }
         }
