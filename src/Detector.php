@@ -42,7 +42,6 @@ final class Detector
         'CODEX_SANDBOX' => 'https://github.com/openai/codex/blob/main/codex-rs/core/src/seatbelt.rs',
         'CODEX_THREAD_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
-        'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
         'GOOSE_TERMINAL' => 'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',

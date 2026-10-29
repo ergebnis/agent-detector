@@ -23,6 +23,7 @@ For a full diff see [`1.3.0...main`][1.3.0...main].
 - Stopped detecting the presence of an agent when the `REPL_ID` environment variable is set ([#135]), by [@localheinz]
 - Stopped detecting the presence of an agent when the `CURSOR_TRACE_ID` environment variable is set ([#136]), by [@localheinz]
 - Stopped detecting the presence of an agent when the `COPILOT_ALLOW_ALL` environment variable is set ([#138]), by [@localheinz]
+- Stopped detecting the presence of an agent when the `COPILOT_MODEL` environment variable is set ([#139]), by [@localheinz]
 
 ## [`1.3.0`][1.3.0]
 
@@ -99,6 +100,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#136]: https://github.com/ergebnis/agent-detector/pull/136
 [#137]: https://github.com/ergebnis/agent-detector/pull/137
 [#138]: https://github.com/ergebnis/agent-detector/pull/138
+[#139]: https://github.com/ergebnis/agent-detector/pull/139
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt
