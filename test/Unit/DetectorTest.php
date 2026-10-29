@@ -51,7 +51,6 @@ final class DetectorTest extends Framework\TestCase
         'OPENCLAW_SHELL',
         'OPENCODE',
         'OPENCODE_CLIENT',
-        'REPL_ID',
         'PI_CODING_AGENT',
     ];
 
