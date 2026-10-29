@@ -37,6 +37,10 @@ $detector = new AgentDetector\Detector();
 $isAgentPresent = $detector->isAgentPresent();
 ```
 
+### Disabling the detection
+
+To disable the detection, set the `AGENT_DETECTOR_DISABLE` environment variable to a non-empty value, for example, `AGENT_DETECTOR_DISABLE=1`. `Detector::isAgentPresent()` then returns `false`, even when an agent is present.
+
 ### Supported agents
 
 This package detects the presence of the following agents via environment variables:
