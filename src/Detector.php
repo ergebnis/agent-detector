@@ -46,7 +46,6 @@ final class Detector
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_EXTENSION_HOST_ROLE' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'CURSOR_TRACE_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'GEMINI_CLI' => 'https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/tools/shell/shell-tool.ts',
         'GOOSE_TERMINAL' => 'https://github.com/aaif-goose/goose/blob/main/crates/goose/src/agents/retry.rs',
         'GROK_AGENT' => 'https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-tools/src/util/env.rs',

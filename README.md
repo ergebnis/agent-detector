@@ -49,7 +49,7 @@ This package detects the presence of the following agents via environment variab
 | [Claude Code](https://github.com/anthropics/claude-code) | `CLAUDECODE`, `CLAUDE_CODE`, `CLAUDE_CODE_IS_COWORK` |
 | [Cline](https://cline.bot) | `CLINE_ACTIVE` |
 | [Codex](https://github.com/openai/codex) | `CODEX_CI`, `CODEX_SANDBOX`, `CODEX_THREAD_ID` |
-| [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_EXTENSION_HOST_ROLE`, `CURSOR_TRACE_ID` |
+| [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_EXTENSION_HOST_ROLE` |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI_CLI` |
 | [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_MODEL` |
 | [Goose](https://github.com/block/goose) | `GOOSE_TERMINAL` |
