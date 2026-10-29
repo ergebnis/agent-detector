@@ -41,7 +41,6 @@ final class Detector
         'CODEX_CI' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CODEX_SANDBOX' => 'https://github.com/openai/codex/blob/main/codex-rs/core/src/seatbelt.rs',
         'CODEX_THREAD_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
-        'COPILOT_ALLOW_ALL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
