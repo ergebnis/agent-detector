@@ -63,8 +63,22 @@ final class Detector
         'CURSOR_EXTENSION_HOST_ROLE' => 'agent-exec',
     ];
 
+    /**
+     * @see https://no-color.org
+     */
+    private const DISABLE_ENVIRONMENT_VARIABLE = 'AGENT_DETECTOR_DISABLE';
+
     public function isAgentPresent(): bool
     {
+        $disable = \getenv(self::DISABLE_ENVIRONMENT_VARIABLE);
+
+        if (
+            \is_string($disable)
+            && '' !== $disable
+        ) {
+            return false;
+        }
+
         foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable => $url) {
             $value = \getenv($variable);
 

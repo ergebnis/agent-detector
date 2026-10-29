@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.3.0...main`][1.3.0...main].
 
+### Added
+
+- Added support for disabling the detection by setting the `AGENT_DETECTOR_DISABLE` environment variable to a non-empty value ([#140]), by [@localheinz]
+
 ### Changed
 
 - Adjusted `Detector::isAgentPresent()` to read the known agent environment variables itself instead of expecting all environment variables as an argument ([#122]), by [@localheinz]
@@ -101,6 +105,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#137]: https://github.com/ergebnis/agent-detector/pull/137
 [#138]: https://github.com/ergebnis/agent-detector/pull/138
 [#139]: https://github.com/ergebnis/agent-detector/pull/139
+[#140]: https://github.com/ergebnis/agent-detector/pull/140
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

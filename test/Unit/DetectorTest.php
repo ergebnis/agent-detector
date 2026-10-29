@@ -63,6 +63,9 @@ final class DetectorTest extends Framework\TestCase
         $variables = \array_merge(
             self::AGENT_ENVIRONMENT_VARIABLES,
             \array_keys(self::AGENT_ENVIRONMENT_VARIABLE_VALUES),
+            [
+                'AGENT_DETECTOR_DISABLE',
+            ],
         );
 
         foreach ($variables as $variable) {
@@ -160,6 +163,47 @@ final class DetectorTest extends Framework\TestCase
             '%s=1',
             $variable,
         ));
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertTrue($result);
+    }
+
+    /**
+     * @dataProvider provideAgentEnvironmentVariable
+     */
+    public function testIsAgentPresentReturnsFalseWhenAgentEnvironmentVariableIsSetAndDisableEnvironmentVariableIsSet(string $variable): void
+    {
+        \putenv(\sprintf(
+            '%s=1',
+            $variable,
+        ));
+
+        \putenv(\sprintf(
+            'AGENT_DETECTOR_DISABLE=%s',
+            self::faker()->word(),
+        ));
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertFalse($result);
+    }
+
+    /**
+     * @dataProvider provideAgentEnvironmentVariable
+     */
+    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetAndDisableEnvironmentVariableIsSetToEmptyValue(string $variable): void
+    {
+        \putenv(\sprintf(
+            '%s=1',
+            $variable,
+        ));
+
+        \putenv('AGENT_DETECTOR_DISABLE=');
 
         $detector = new Detector();
 
