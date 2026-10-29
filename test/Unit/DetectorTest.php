@@ -38,7 +38,6 @@ final class DetectorTest extends Framework\TestCase
         'CODEX_SANDBOX',
         'CODEX_THREAD_ID',
         'COPILOT_ALLOW_ALL',
-        'COPILOT_GITHUB_TOKEN',
         'COPILOT_MODEL',
         'COPILOT_CLI',
         'CURSOR_AGENT',
