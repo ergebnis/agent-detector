@@ -62,9 +62,17 @@ final class Detector
     public function isAgentPresent(): bool
     {
         foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable => $url) {
-            if (\getenv($variable) !== false) {
-                return true;
+            $value = \getenv($variable);
+
+            if (!\is_string($value)) {
+                continue;
             }
+
+            if ('' === $value) {
+                continue;
+            }
+
+            return true;
         }
 
         return false;
