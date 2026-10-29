@@ -43,7 +43,6 @@ final class Detector
         'CODEX_THREAD_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_ALLOW_ALL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_CLI' => 'https://github.com/github/copilot-cli',
-        'COPILOT_GITHUB_TOKEN' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'COPILOT_MODEL' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_AGENT' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
         'CURSOR_EXTENSION_HOST_ROLE' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',

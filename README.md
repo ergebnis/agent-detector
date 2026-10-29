@@ -51,7 +51,7 @@ This package detects the presence of the following agents via environment variab
 | [Codex](https://github.com/openai/codex) | `CODEX_CI`, `CODEX_SANDBOX`, `CODEX_THREAD_ID` |
 | [Cursor](https://cursor.com) | `CURSOR_AGENT`, `CURSOR_EXTENSION_HOST_ROLE`, `CURSOR_TRACE_ID` |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | `GEMINI_CLI` |
-| [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_GITHUB_TOKEN`, `COPILOT_MODEL |
+| [GitHub Copilot](https://github.com/features/copilot) | `COPILOT_ALLOW_ALL`, `COPILOT_CLI`, `COPILOT_MODEL` |
 | [Goose](https://github.com/block/goose) | `GOOSE_TERMINAL` |
 | [Grok](https://x.ai/grok) | `GROK_AGENT` |
 | [Junie](https://www.jetbrains.com/junie) | `JUNIE_DATA`, `JUNIE_SHIM_PATH` |
