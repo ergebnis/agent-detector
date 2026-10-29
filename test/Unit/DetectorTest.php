@@ -37,7 +37,6 @@ final class DetectorTest extends Framework\TestCase
         'CODEX_CI',
         'CODEX_SANDBOX',
         'CODEX_THREAD_ID',
-        'COPILOT_MODEL',
         'COPILOT_CLI',
         'CURSOR_AGENT',
         'GEMINI_CLI',
