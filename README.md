@@ -43,7 +43,7 @@ To disable the detection, set the `AGENT_DETECTOR_DISABLE` environment variable 
 
 ### Supported agents
 
-This package detects the presence of the following agents via environment variables:
+This package detects the presence of the following agents via environment variables. An environment variable counts only when it is set to a non-empty value, or to the value given in the table.
 
 | Agent | Environment Variable |
 |---|---|
