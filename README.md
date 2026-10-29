@@ -59,7 +59,6 @@ This package detects the presence of the following agents via environment variab
 | [OpenClaw](https://openclaw.ai) | `OPENCLAW_SHELL` |
 | [OpenCode](https://github.com/sst/opencode) | `OPENCODE`, `OPENCODE_CLIENT` |
 | [Pi](https://pi.dev) | `PI_CODING_AGENT` |
-| [Replit](https://replit.com) | `REPL_ID` |
 
 ### Indicating the presence of an agent
 
