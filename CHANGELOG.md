@@ -20,6 +20,7 @@ For a full diff see [`1.3.0...main`][1.3.0...main].
 
 - Stopped detecting the presence of an agent when the `COPILOT_GITHUB_TOKEN` environment variable is set ([#133]), by [@localheinz]
 - Stopped detecting the presence of an agent when the `REPL_ID` environment variable is set ([#135]), by [@localheinz]
+- Stopped detecting the presence of an agent when the `CURSOR_TRACE_ID` environment variable is set ([#136]), by [@localheinz]
 
 ## [`1.3.0`][1.3.0]
 
@@ -93,6 +94,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#133]: https://github.com/ergebnis/agent-detector/pull/133
 [#134]: https://github.com/ergebnis/agent-detector/pull/134
 [#135]: https://github.com/ergebnis/agent-detector/pull/135
+[#136]: https://github.com/ergebnis/agent-detector/pull/136
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt
