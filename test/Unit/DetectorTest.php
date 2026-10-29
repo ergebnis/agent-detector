@@ -122,6 +122,35 @@ final class DetectorTest extends Framework\TestCase
     /**
      * @dataProvider provideAgentEnvironmentVariable
      */
+    public function testIsAgentPresentReturnsFalseWhenAgentEnvironmentVariableIsSetToEmptyValue(string $variable): void
+    {
+        \putenv(\sprintf(
+            '%s=',
+            $variable,
+        ));
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertFalse($result);
+    }
+
+    public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSetToEmptyValueAndAnotherAgentEnvironmentVariableIsSet(): void
+    {
+        \putenv('AGENT_CONTEXT_OUT=');
+        \putenv('PI_CODING_AGENT=1');
+
+        $detector = new Detector();
+
+        $result = $detector->isAgentPresent();
+
+        self::assertTrue($result);
+    }
+
+    /**
+     * @dataProvider provideAgentEnvironmentVariable
+     */
     public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSet(string $variable): void
     {
         \putenv(\sprintf(
