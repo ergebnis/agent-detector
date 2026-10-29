@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`1.3.0...main`][1.3.0...main].
 
+### Changed
+
+- Adjusted `Detector::isAgentPresent()` to read the known agent environment variables itself instead of expecting all environment variables as an argument ([#122]), by [@localheinz]
+
 ## [`1.3.0`][1.3.0]
 
 For a full diff see [`1.2.0...1.3.0`][1.2.0...1.3.0].
@@ -74,6 +78,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#119]: https://github.com/ergebnis/agent-detector/pull/119
 [#120]: https://github.com/ergebnis/agent-detector/pull/120
 [#121]: https://github.com/ergebnis/agent-detector/pull/121
+[#122]: https://github.com/ergebnis/agent-detector/pull/122
 [#123]: https://github.com/ergebnis/agent-detector/pull/123
 [#124]: https://github.com/ergebnis/agent-detector/pull/124
 

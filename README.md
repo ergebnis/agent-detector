@@ -34,7 +34,7 @@ use Ergebnis\AgentDetector;
 
 $detector = new AgentDetector\Detector();
 
-$isAgentPresent = $detector->isAgentPresent(\getenv());
+$isAgentPresent = $detector->isAgentPresent();
 ```
 
 ### Supported agents

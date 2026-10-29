@@ -23,25 +23,99 @@ use PHPUnit\Framework;
 final class DetectorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
+    private const AGENT_ENVIRONMENT_VARIABLES = [
+        'AGENT_CONTEXT_OUT',
+        'AGENT_DISPLAY_OUT',
+        'AI_AGENT',
+        'AMP_CURRENT_THREAD_ID',
+        'ANTIGRAVITY_AGENT',
+        'AUGMENT_AGENT',
+        'CLAUDECODE',
+        'CLAUDE_CODE',
+        'CLAUDE_CODE_IS_COWORK',
+        'CLINE_ACTIVE',
+        'CODEX_CI',
+        'CODEX_SANDBOX',
+        'CODEX_THREAD_ID',
+        'COPILOT_ALLOW_ALL',
+        'COPILOT_GITHUB_TOKEN',
+        'COPILOT_MODEL',
+        'COPILOT_CLI',
+        'CURSOR_AGENT',
+        'CURSOR_EXTENSION_HOST_ROLE',
+        'CURSOR_TRACE_ID',
+        'GEMINI_CLI',
+        'GOOSE_TERMINAL',
+        'GROK_AGENT',
+        'JUNIE_DATA',
+        'JUNIE_SHIM_PATH',
+        'OPENCLAW_SHELL',
+        'OPENCODE',
+        'OPENCODE_CLIENT',
+        'REPL_ID',
+        'PI_CODING_AGENT',
+    ];
+
+    /**
+     * @var array<string, false|string>
+     */
+    private array $environmentVariables = [];
+
+    protected function setUp(): void
+    {
+        foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable) {
+            $this->environmentVariables[$variable] = \getenv($variable);
+
+            \putenv($variable);
+        }
+    }
+
+    protected function tearDown(): void
+    {
+        foreach ($this->environmentVariables as $variable => $value) {
+            if (false === $value) {
+                \putenv($variable);
+
+                continue;
+            }
+
+            \putenv(\sprintf(
+                '%s=%s',
+                $variable,
+                $value,
+            ));
+        }
+
+        $this->environmentVariables = [];
+    }
 
     public function testIsAgentPresentReturnsFalseWhenNoAgentEnvironmentVariableIsSet(): void
     {
         $detector = new Detector();
 
-        $result = $detector->isAgentPresent([]);
+        $result = $detector->isAgentPresent();
 
         self::assertFalse($result);
     }
 
     public function testIsAgentPresentReturnsFalseWhenUnknownEnvironmentVariableIsSet(): void
     {
-        $variable = self::faker()->slug();
+        $variable = \mb_strtoupper(\str_replace(
+            '-',
+            '_',
+            self::faker()->slug(),
+        ));
+
+        $this->environmentVariables[$variable] = false;
+
+        \putenv(\sprintf(
+            '%s=1',
+            $variable,
+        ));
 
         $detector = new Detector();
 
-        $result = $detector->isAgentPresent([
-            $variable => '1',
-        ]);
+        $result = $detector->isAgentPresent();
 
         self::assertFalse($result);
     }
@@ -51,11 +125,14 @@ final class DetectorTest extends Framework\TestCase
      */
     public function testIsAgentPresentReturnsTrueWhenAgentEnvironmentVariableIsSet(string $variable): void
     {
+        \putenv(\sprintf(
+            '%s=1',
+            $variable,
+        ));
+
         $detector = new Detector();
 
-        $result = $detector->isAgentPresent([
-            $variable => '1',
-        ]);
+        $result = $detector->isAgentPresent();
 
         self::assertTrue($result);
     }
@@ -65,40 +142,7 @@ final class DetectorTest extends Framework\TestCase
      */
     public static function provideAgentEnvironmentVariable(): iterable
     {
-        $variables = [
-            'AGENT_CONTEXT_OUT',
-            'AGENT_DISPLAY_OUT',
-            'AI_AGENT',
-            'AMP_CURRENT_THREAD_ID',
-            'ANTIGRAVITY_AGENT',
-            'AUGMENT_AGENT',
-            'CLAUDECODE',
-            'CLAUDE_CODE',
-            'CLAUDE_CODE_IS_COWORK',
-            'CLINE_ACTIVE',
-            'CODEX_CI',
-            'CODEX_SANDBOX',
-            'CODEX_THREAD_ID',
-            'COPILOT_ALLOW_ALL',
-            'COPILOT_GITHUB_TOKEN',
-            'COPILOT_MODEL',
-            'COPILOT_CLI',
-            'CURSOR_AGENT',
-            'CURSOR_EXTENSION_HOST_ROLE',
-            'CURSOR_TRACE_ID',
-            'GEMINI_CLI',
-            'GOOSE_TERMINAL',
-            'GROK_AGENT',
-            'JUNIE_DATA',
-            'JUNIE_SHIM_PATH',
-            'OPENCLAW_SHELL',
-            'OPENCODE',
-            'OPENCODE_CLIENT',
-            'REPL_ID',
-            'PI_CODING_AGENT',
-        ];
-
-        foreach ($variables as $variable) {
+        foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable) {
             yield $variable => [
                 $variable,
             ];

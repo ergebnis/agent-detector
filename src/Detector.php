@@ -60,13 +60,10 @@ final class Detector
         'REPL_ID' => 'https://github.com/vercel/vercel/blob/main/packages/detect-agent/src/index.ts',
     ];
 
-    /**
-     * @param array<string, string> $environmentVariables
-     */
-    public function isAgentPresent(array $environmentVariables): bool
+    public function isAgentPresent(): bool
     {
         foreach (self::AGENT_ENVIRONMENT_VARIABLES as $variable => $url) {
-            if (\array_key_exists($variable, $environmentVariables)) {
+            if (\getenv($variable) !== false) {
                 return true;
             }
         }
