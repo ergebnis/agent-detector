@@ -8,6 +8,9 @@ on: # yamllint disable-line rule:truthy
     branches:
       - "main"
 
+env:
+  COMPOSER_ROOT_VERSION: "dev-main"
+
 permissions: {}
 
 jobs:
