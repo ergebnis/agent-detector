@@ -13,14 +13,14 @@ declare(strict_types=1);
 
 namespace Ergebnis\AgentDetector\Test\Unit;
 
-use Ergebnis\AgentDetector\Detector;
+use Ergebnis\AgentDetector\EnvironmentDetector;
 use Ergebnis\AgentDetector\Test;
 use PHPUnit\Framework;
 
 /**
- * @covers \Ergebnis\AgentDetector\Detector
+ * @covers \Ergebnis\AgentDetector\EnvironmentDetector
  */
-final class DetectorTest extends Framework\TestCase
+final class EnvironmentDetectorTest extends Framework\TestCase
 {
     use Test\Util\Helper;
     private const AGENT_ENVIRONMENT_VARIABLES = [
@@ -96,7 +96,7 @@ final class DetectorTest extends Framework\TestCase
 
     public function testIsAgentPresentReturnsFalseWhenNoAgentEnvironmentVariableIsSetToNonEmptyString(): void
     {
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -118,7 +118,7 @@ final class DetectorTest extends Framework\TestCase
             $variable,
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -135,7 +135,7 @@ final class DetectorTest extends Framework\TestCase
             $variable,
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -147,7 +147,7 @@ final class DetectorTest extends Framework\TestCase
         \putenv('AGENT_CONTEXT_OUT=');
         \putenv('PI_CODING_AGENT=1');
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -164,7 +164,7 @@ final class DetectorTest extends Framework\TestCase
             $variable,
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -186,7 +186,7 @@ final class DetectorTest extends Framework\TestCase
             self::faker()->word(),
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -205,7 +205,7 @@ final class DetectorTest extends Framework\TestCase
 
         \putenv('AGENT_DETECTOR_DISABLE=');
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -237,7 +237,7 @@ final class DetectorTest extends Framework\TestCase
             self::faker()->word(),
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 
@@ -257,7 +257,7 @@ final class DetectorTest extends Framework\TestCase
             $value,
         ));
 
-        $detector = new Detector();
+        $detector = new EnvironmentDetector();
 
         $result = $detector->isAgentPresent();
 

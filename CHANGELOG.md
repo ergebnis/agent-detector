@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`2.2.0...main`][2.2.0...main].
 
+### Changed
+
+- Turned `Detector` into an interface and extracted `EnvironmentDetector` ([#171]), by [@localheinz]
+
+  To upgrade, replace instantiations of `Detector` with instantiations of `EnvironmentDetector`:
+
+  ```diff
+  -$detector = new AgentDetector\Detector();
+  +$detector = new AgentDetector\EnvironmentDetector();
+  ```
+
 ### Fixed
 
 - Added paragraph about allowing installation to PHP version support policy ([#167]), by [@localheinz]
@@ -139,6 +150,7 @@ For a full diff see [`2655ea1...1.0.1`][2655ea1...1.0.1].
 [#156]: https://github.com/ergebnis/agent-detector/pull/156
 [#162]: https://github.com/ergebnis/agent-detector/pull/162
 [#167]: https://github.com/ergebnis/agent-detector/pull/167
+[#171]: https://github.com/ergebnis/agent-detector/pull/171
 
 [@localheinz]: https://github.com/localheinz
 [@raphaelstolt]: https://github.com/raphaelstolt

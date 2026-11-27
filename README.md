@@ -32,14 +32,14 @@ declare(strict_types=1);
 
 use Ergebnis\AgentDetector;
 
-$detector = new AgentDetector\Detector();
+$detector = new AgentDetector\EnvironmentDetector();
 
 $isAgentPresent = $detector->isAgentPresent();
 ```
 
 ### Disabling the detection
 
-To disable the detection, set the `AGENT_DETECTOR_DISABLE` environment variable to a non-empty value, for example, `AGENT_DETECTOR_DISABLE=1`. `Detector::isAgentPresent()` then returns `false`, even when an agent is present.
+To disable the detection, set the `AGENT_DETECTOR_DISABLE` environment variable to a non-empty value, for example, `AGENT_DETECTOR_DISABLE=1`. `EnvironmentDetector::isAgentPresent()` then returns `false`, even when an agent is present.
 
 ### Supported agents
 
