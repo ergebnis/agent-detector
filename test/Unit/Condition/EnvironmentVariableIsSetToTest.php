@@ -13,8 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\AgentDetector\Test\Unit\Condition;
 
-use Ergebnis\AgentDetector\Condition;
-use Ergebnis\AgentDetector\Test;
+use Ergebnis\AgentDetector;
 use PHPUnit\Framework;
 
 /**
@@ -22,7 +21,7 @@ use PHPUnit\Framework;
  */
 final class EnvironmentVariableIsSetToTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use AgentDetector\Test\Util\Helper;
     private string $name;
 
     protected function setUp(): void
@@ -44,7 +43,7 @@ final class EnvironmentVariableIsSetToTest extends Framework\TestCase
 
         $source = $faker->url();
 
-        $condition = Condition\EnvironmentVariableIsSetTo::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetTo::create(
             $this->name,
             $faker->word(),
             $source,
@@ -57,7 +56,7 @@ final class EnvironmentVariableIsSetToTest extends Framework\TestCase
     {
         $faker = self::faker();
 
-        $condition = Condition\EnvironmentVariableIsSetTo::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetTo::create(
             $this->name,
             $faker->word(),
             $faker->url(),
@@ -79,7 +78,7 @@ final class EnvironmentVariableIsSetToTest extends Framework\TestCase
             $faker->word(),
         ));
 
-        $condition = Condition\EnvironmentVariableIsSetTo::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetTo::create(
             $this->name,
             $value,
             $faker->url(),
@@ -100,7 +99,7 @@ final class EnvironmentVariableIsSetToTest extends Framework\TestCase
             $value,
         ));
 
-        $condition = Condition\EnvironmentVariableIsSetTo::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetTo::create(
             $this->name,
             $value,
             $faker->url(),
