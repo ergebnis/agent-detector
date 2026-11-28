@@ -13,8 +13,7 @@ declare(strict_types=1);
 
 namespace Ergebnis\AgentDetector\Test\Unit\Condition;
 
-use Ergebnis\AgentDetector\Condition;
-use Ergebnis\AgentDetector\Test;
+use Ergebnis\AgentDetector;
 use PHPUnit\Framework;
 
 /**
@@ -22,7 +21,7 @@ use PHPUnit\Framework;
  */
 final class EnvironmentVariableIsSetToNonEmptyStringTest extends Framework\TestCase
 {
-    use Test\Util\Helper;
+    use AgentDetector\Test\Util\Helper;
     private string $name;
 
     protected function setUp(): void
@@ -42,7 +41,7 @@ final class EnvironmentVariableIsSetToNonEmptyStringTest extends Framework\TestC
     {
         $source = self::faker()->url();
 
-        $condition = Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetToNonEmptyString::create(
             $this->name,
             $source,
         );
@@ -52,7 +51,7 @@ final class EnvironmentVariableIsSetToNonEmptyStringTest extends Framework\TestC
 
     public function testIsMetReturnsFalseWhenEnvironmentVariableIsNotSet(): void
     {
-        $condition = Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetToNonEmptyString::create(
             $this->name,
             self::faker()->url(),
         );
@@ -67,7 +66,7 @@ final class EnvironmentVariableIsSetToNonEmptyStringTest extends Framework\TestC
             $this->name,
         ));
 
-        $condition = Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetToNonEmptyString::create(
             $this->name,
             self::faker()->url(),
         );
@@ -85,7 +84,7 @@ final class EnvironmentVariableIsSetToNonEmptyStringTest extends Framework\TestC
             $faker->word(),
         ));
 
-        $condition = Condition\EnvironmentVariableIsSetToNonEmptyString::create(
+        $condition = AgentDetector\Condition\EnvironmentVariableIsSetToNonEmptyString::create(
             $this->name,
             $faker->url(),
         );
